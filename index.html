@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Movie App</title>
+      <link
+         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+         rel="stylesheet"
+      />
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+         crossorigin="anonymous"
+         referrerpolicy="no-referrer"
+      />
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+      <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+      <link rel="stylesheet" href="assets/css/style.css" />
+   </head>
+   <body>
+      <nav class="navbar navbar-expand-lg fixed-top top-0 bg-body-tertiary">
+         <div class="container-fluid">
+            <a class="navbar-brand" href="#">EMBACT</a>
+            <button
+               class="navbar-toggler"
+               type="button"
+               data-bs-toggle="collapse"
+               data-bs-target="#navbarSupportedContent"
+               aria-controls="navbarSupportedContent"
+               aria-expanded="false"
+               aria-label="Toggle navigation"
+            >
+               <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               <ul class="navbar-nav ms-3 me-auto mb-2 mb-lg-0 gap-3">
+                  <li class="nav-item">
+                     <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#">TV Series</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Categories </a>
+                     <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Drama</a></li>
+                        <li><a class="dropdown-item" href="#">Adventure</a></li>
+                        <li><a class="dropdown-item" href="#">Romance</a></li>
+                        <li><a class="dropdown-item" href="#">Comedy</a></li>
+                        <li><a class="dropdown-item" href="#">Science Fiction</a></li>
+                        <li><a class="dropdown-item" href="#">Sports</a></li>
+                     </ul>
+                  </li>
+               </ul>
+               <div class="d-flex gap-4">
+                  <span class="search-icon"
+                     ><svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48">
+                        <path
+                           d="M796 935 533 672q-30 26-69.959 40.5T378 727q-108.162 0-183.081-75Q120 577 120 471t75-181q75-75 181.5-75t181 75Q632 365 632 471.15 632 514 618 554q-14 40-42 75l264 262-44 44ZM377 667q81.25 0 138.125-57.5T572 471q0-81-56.875-138.5T377 275q-82.083 0-139.542 57.5Q180 390 180 471t57.458 138.5Q294.917 667 377 667Z"
+                        /></svg
+                  ></span>
+                  <div class="d-flex align-items-center gap-2">
+                     <img
+                        class="rounded-circle user-avatar"
+                        src="https://pbs.twimg.com/profile_images/1639264530692800517/n9WCkxe0_400x400.jpg"
+                        alt=""
+                     />
+                     <span class="user-name"><span>Hisham</span><span>Mohamed</span></span>
+                     <svg xmlns="http://www.w3.org/2000/svg" height="28" fill="#FFF" viewBox="0 96 960 960" width="48">
+                        <path d="M480 711 240 471l43-43 197 198 197-197 43 43-240 239Z" />
+                     </svg>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </nav>
+      <!-- Slider -->
+      <div class="slider">
+         <div class="wrapper">
+            <div class="d-flex gap-4 align-items-center position-relative">
+               <div class="rating">
+                  <span></span>
+                  <div class="starList"></div>
+               </div>
+               <div class="movie-title"></div>
+            </div>
+            <p class="description"></p>
+            <div class="movie-btns d-none gap-2 position-relative mt-4">
+               <div>
+                  <a href="#">
+                     <img
+                        width="25"
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAABAElEQVR4nO3TPUoEQRAF4A9/WDQRTHWv4AVM5gYew2QXQTzACqKgIKiRobKZYORP7gFMNDIWVlZRMNlEUAYaaWdnZmEYs3nwgqrqrveqmqZBg7rQxQjvFfgZGOdGoecveoFV0Mu5O5abJLCADUxVFUjH+cA+ZnOanOELWxOmaeEkrKyTLS7jBgdRbhMPGGIVz+HMWoHAEa6wVOSgjZcovsAd5iOH98Fl3jqGwagygUEUL+IVKyFO8IS5AoFBmUDa/BZ7mfwjjtHHKa4z9SQwxW5Y4ZhI+shv2MFMptbHOdZxicOSDUxjO6yqtn+QRBMU9vv3j9bFd83sVDTcoIG/+AFD3lnFpn1DIAAAAABJRU5ErkJggg=="
+                     />
+                     Book a ticket
+                  </a>
+               </div>
+               <div>
+                  <a href="#">
+                     Watch Trailer
+                     <img
+                        width="20"
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB2UlEQVR4nO3Zz6tNURTA8e09ibyBosiPCWboKUYmUgZmRgYmTMRIZOBOjfwamfoHTBiYKJGYGTDRGygxIT+KUoieh49unZPd6dynq/Nee+V8h/fe9l3f0177rLV2Sj09PfOCCRzFPbzAA5zAslQ6mMR17TzHISxJpYIz/s5D7EklgqdZoOexGafwviHxCzewNZUE5rIgV2afr8IlfGuIzOIKVqcSkDHi+424ip8NkY8YYPniRz2GQPa7Xbjfkh8vcXx4kqWSBWqwHzMtIo+wN5UuMARLq6f+rkXkLrankgVqhkmPc/jakPhe5c3aVLJAtsaGKuAfDZHPleCKbqPuWCBbaxtutWyrV9WWm+wm6gUSaCT6kxaRx9jX1f8smEBWIB7B2xGJvqNogUaiD/CpITFX5c26ogVqsH5Eon/BRUylkgVqMI07I0r3nal0gRocaHmjv8GaFEEga6aOVYVhzSBFEajBwSyMm2kceoHut9DZyEn8euxOr7BjdPpfFlwUAVFfZKKWEqGLOVHLaVEbGn9mR7FaSkyFbOpFHquIOtjC7pCjRWwqfbg7O894/XKE8fpMFtwFbMFpfIhywXFS8CumCVwLe8k3ZBggDuM2nlWnTYxr1p6e/4DfeOh6Oz583X0AAAAASUVORK5CYII="
+                     />
+                     <!-- <svg xmlns="http://www.w3.org/2000/svg" height="25" viewBox="0 96 960 960" width="25"><path d="M142.385 890.999q-24.461 0-41.422-16.962-16.962-16.961-16.962-41.422V681.847q36-12.616 60.731-39.347t24.731-67q0-40.269-24.937-67.5t-60.525-38.847V318.385q0-24.461 16.962-41.422 16.961-16.962 41.422-16.962h676.23q24.461 0 41.422 16.962 16.962 16.961 16.962 41.422v150.768q-36 11.616-60.731 38.847t-24.731 67.5q0 40.269 24.937 67t60.525 39.347v150.768q0 24.461-16.962 41.422-16.961 16.962-41.422 16.962h-676.23Zm0-58.384h676.23V724.361Q780 700.692 756.577 661.269q-23.423-39.423-23.423-85.81t23.423-85.269q23.423-38.882 62.038-63.906V318.385h-676.23v108.254q39.54 25.132 62.501 63.635 22.96 38.503 22.96 85.037 0 46.535-23.154 85.958t-62.307 63.269v108.077Zm338.541-64.693q11.381 0 19.574-8.118 8.192-8.118 8.192-19.499 0-11.382-8.118-19.574-8.118-8.192-19.5-8.192-11.381 0-19.574 8.117-8.192 8.118-8.192 19.5t8.118 19.574q8.118 8.192 19.5 8.192Zm0-165.23q11.381 0 19.574-8.118 8.192-8.118 8.192-19.5 0-11.381-8.118-19.574-8.118-8.192-19.5-8.192-11.381 0-19.574 8.118-8.192 8.118-8.192 19.5 0 11.381 8.118 19.574 8.118 8.192 19.5 8.192Zm0-165.231q11.381 0 19.574-8.117 8.192-8.118 8.192-19.5t-8.118-19.574q-8.118-8.192-19.5-8.192-11.381 0-19.574 8.118-8.192 8.118-8.192 19.499 0 11.382 8.118 19.574 8.118 8.192 19.5 8.192ZM481 575Z"/></svg> -->
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Arrows -->
+      <div class="arrows d-flex flex-column">
+         <div class="next-page">
+            <img
+               src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABYElEQVR4nO3ZsUtWYRTH8cfEUiQiaXCRBoeQoCEIocHJ/8k/oEVocXQS2lwcxKGhSSMwBHfBIYiCiCQicPzEG0d9Nd9XF/NcON/puc85XH4/vne7rRXXA0tYbl0Gr5zxGiOtS2AEK/5lFXdaF8Ao1iL4cV+Jk3NvNto6UOJNBP6Nxb4iC/gV53WMtYzgLjYi6E+8jPu/xPkFfsTVFsZbJnAPmxHwCPN9s9Mi8fwc3+P6LSZaBjCJdxHsG55dmJ8rEndz+BKjbdz/78H7wQN8iEBf8fTcwoAicf8En2O8h6l2G+AhPkaQT5gdsHdpkZg9xmGs7OPRjQe/JMRJiQPMDNkbWCTmM/GOHrs3FnhIgJ34JKav2BtaJHam413bLSvXKdIJVJFklJFslJFslJFslJFslJFslJFslJFslJFslJFslJFslJFslJFslJFslJFslJFslJFs4H3vf+Nt52hd4Q/qdcGgM2MMBgAAAABJRU5ErkJggg=="
+            />
+            <span>NEXT PAGE</span>
+         </div>
+         <div class="fs-1 pageNumber">1</div>
+         <div class="previous-page">
+            <span>PREVIOUS PAGE</span>
+            <img
+               src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABYElEQVR4nO3ZsUtWYRTH8cfEUiQiaXCRBoeQoCEIocHJ/8k/oEVocXQS2lwcxKGhSSMwBHfBIYiCiCQicPzEG0d9Nd9XF/NcON/puc85XH4/vne7rRXXA0tYbl0Gr5zxGiOtS2AEK/5lFXdaF8Ao1iL4cV+Jk3NvNto6UOJNBP6Nxb4iC/gV53WMtYzgLjYi6E+8jPu/xPkFfsTVFsZbJnAPmxHwCPN9s9Mi8fwc3+P6LSZaBjCJdxHsG55dmJ8rEndz+BKjbdz/78H7wQN8iEBf8fTcwoAicf8En2O8h6l2G+AhPkaQT5gdsHdpkZg9xmGs7OPRjQe/JMRJiQPMDNkbWCTmM/GOHrs3FnhIgJ34JKav2BtaJHam413bLSvXKdIJVJFklJFslJFslJFslJFslJFslJFslJFslJFslJFslJFslJFslJFslJFslJFslJFslJFs4H3vf+Nt52hd4Q/qdcGgM2MMBgAAAABJRU5ErkJggg=="
+            />
+         </div>
+      </div>
+      <!-- Swiper -->
+      <div class="swiper mySwiper">
+         <div class="swiper-wrapper"></div>
+         <div class="swiper-pagination"></div>
+      </div>
+      <div class="container-fluid"></div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+      <script src="assets/js/bootstrap.bundle.min.js"></script>
+      <script src="assets/js/script.js"></script>
+      <!-- Initialize Swiper -->
+      <script>
+         var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 6,
+            spaceBetween: 30,
+            // loop:true,
+            freeMode: true,
+            pagination: {
+               el: ".swiper-pagination",
+               clickable: true,
+            },
+         });
+      </script>
+   </body>
+</html>
